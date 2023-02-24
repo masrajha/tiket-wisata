@@ -51,7 +51,7 @@ function hitungTotalBayar() {
 }
 const agreeCheckbox = document.getElementById("agree");
 const pesanTiketButton = document.getElementById("pesan-tiket-button");
-
+pesanTiketButton.disabled = true;
 agreeCheckbox.addEventListener("change", function () {
 
     if (this.checked) {
