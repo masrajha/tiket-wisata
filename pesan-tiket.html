@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Form Input Data Wisata</title>
+    <style>
+        /* Style untuk form */
+        form {
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        /* Style untuk label */
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        /* Style untuk input */
+        input[type=text],
+        input[type=tel] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: none;
+            border-bottom: 2px solid #1da1f2;
+            font-size: 16px;
+        }
+
+        /* Style untuk dropdown */
+        select {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: none;
+            border-bottom: 2px solid #1da1f2;
+            font-size: 16px;
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath fill='%23AAA' d='M2.3 0L0 3h8z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position-x: 100%;
+            background-position-y: 8px;
+        }
+
+        /* Style untuk tombol */
+        button {
+            background-color: #1da1f2;
+            color: #fff;
+            border: none;
+            padding: 12px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+        }
+
+        button:hover {
+            background-color: #0c85d0;
+        }
+
+        /* Style untuk total bayar */
+        #total-bayar {
+            font-weight: bold;
+            margin-top: 10px;
+            color: #1da1f2;
+        }
+
+        /* Style untuk pesan error */
+        .error-message {
+            color: red;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Tambahkan form HTML di sini -->
+    <form>
+        <label for="nama">Nama Lengkap:</label>
+        <input type="text" id="nama" name="nama"><br><br>
+
+        <label for="identitas">Nomor Identitas:</label>
+        <input type="text" id="identitas" name="identitas"><br><br>
+
+        <label for="hp">No. HP:</label>
+        <input type="text" id="hp" name="hp"><br><br>
+
+        <label for="wisata">Tempat Wisata:</label>
+        <select id="wisata" name="wisata">
+            <option value="Pantai Klara">Pantai Klara</option>
+            <option value="Pantai Mutun">Pantai Mutun</option>
+            <option value="Pahawang">Pahawang</option>
+        </select><br><br>
+
+        <label for="tanggal">Tanggal Kunjungan:</label>
+        <input type="date" id="tanggal" name="tanggal"><br><br>
+
+        <label for="dewasa">Pengunjung Dewasa:</label>
+        <input type="number" id="dewasa" name="dewasa" min="0"><br><br>
+
+        <label for="anak">Pengunjung Anak-Anak:</label>
+        <input type="number" id="anak" name="anak" min="0"><br><br>
+
+        <label for="harga">Harga Tiket:</label>
+        <input type="text" id="harga" name="harga" value="Rp."><br><br>
+
+        <label for="total">Total Bayar:</label>
+        <input type="text" id="total-bayar" name="total"><br><br>
+        <input type="checkbox" id="agree" name="agree">
+        <label for="agree">Saya dan/atau romobingan telah membaca, mengerti, dan setuju berdasarkan syarat dan ketentuan
+            yang telah ditetapkan</label>
+
+        <button type="button" onclick="hitungTotalBayar()">Hitung Total Bayar</button>
+        <button type="submit" id="pesan-tiket-button">Pesan Tiket</button>
+        <button type="reset">Cancel</button>
+    </form>
+</body>
+<script>
+    // Mendapatkan elemen select untuk tempat wisata
+    const wisata = document.getElementById("wisata");
+
+    // Mendapatkan elemen input untuk harga tiket
+    const harga = document.getElementById("harga");
+
+    // Memberikan event listener pada elemen select
+    wisata.addEventListener("change", function () {
+        // Mendapatkan nilai option yang dipilih
+        const selectedWisata = wisata.value;
+
+        // Menentukan harga tiket berdasarkan nilai option yang dipilih
+        let ticketPrice = 0;
+        if (selectedWisata === "Pantai Klara") {
+            ticketPrice = 100000;
+        } else if (selectedWisata === "Pantai Mutun") {
+            ticketPrice = 150000;
+        } else if (selectedWisata === "Pahawang") {
+            ticketPrice = 300000;
+        }
+
+        // Mengubah nilai input harga tiket dengan harga yang sesuai
+        harga.value = "Rp. " + ticketPrice.toLocaleString();
+    });
+
+    // Mendapatkan elemen input untuk harga tiket, pengunjung dewasa, dan pengunjung anak-anak
+    const dewasa = document.getElementById("dewasa");
+    const anak = document.getElementById("anak");
+
+    // Mendapatkan elemen input untuk total bayar
+    const totalBayar = document.getElementById("total-bayar");
+
+    // Memberikan event listener pada elemen input pengunjung dewasa dan pengunjung anak-anak
+    dewasa.addEventListener("input", hitungTotalBayar);
+    anak.addEventListener("input", hitungTotalBayar);
+
+    // Fungsi untuk menghitung total bayar
+    function hitungTotalBayar() {
+        // Mendapatkan nilai input harga tiket
+        const ticketPrice = parseInt(harga.value.replace(/\D/g, ""));
+
+        // Mendapatkan nilai input pengunjung dewasa dan anak-anak
+        const dewasaValue = parseInt(dewasa.value);
+        const anakValue = parseInt(anak.value);
+
+        // Menghitung total bayar berdasarkan harga tiket dan jumlah pengunjung dewasa dan anak-anak
+        const total = ticketPrice * dewasaValue + 0.5 * ticketPrice * anakValue;
+
+        // Mengubah nilai input total bayar dengan total yang sesuai
+        totalBayar.value = "Rp. " + total.toLocaleString();
+    }
+    const agreeCheckbox = document.getElementById("agree");
+    const pesanTiketButton = document.getElementById("pesan-tiket-button");
+
+    agreeCheckbox.addEventListener("change", function () {
+        
+        if (this.checked) {
+            pesanTiketButton.disabled = false;
+            console.log("Checked");
+        } else {
+            pesanTiketButton.disabled = true;
+            console.log("Unchecked");
+        }
+    });
+
+</script>
+
+</html>
