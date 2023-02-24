@@ -149,7 +149,7 @@
         }
 
         // Mengubah nilai input harga tiket dengan harga yang sesuai
-        harga.value = ticketPrice.toLocaleString();
+        harga.value = ticketPrice.toString();
     });
 
     // Mendapatkan elemen input untuk harga tiket, pengunjung dewasa, dan pengunjung anak-anak
@@ -176,7 +176,7 @@
         const total = ticketPrice * dewasaValue + 0.5 * ticketPrice * anakValue;
 
         // Mengubah nilai input total bayar dengan total yang sesuai
-        totalBayar.value = total.toLocaleString();
+        totalBayar.value = total.toString();
     }
     const agreeCheckbox = document.getElementById("agree");
     const pesanTiketButton = document.getElementById("pesan-tiket-button");
