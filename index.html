@@ -195,11 +195,11 @@
                         </div>
                         <div class="form-group">
                             <label for="dewasa">Pengunjung Dewasa</label>
-                            <input type="number" class="form-control" id="dewasa" name="dewasa" required>
+                            <input type="number" class="form-control" id="dewasa" name="dewasa" value="1" min="1" required>
                         </div>
                         <div class="form-group">
                             <label for="pe ngunjung-anak">Pengunjung Anak-Anak</label>
-                            <input type="number" class="form-control" id="anak" name="anak" required>
+                            <input type="number" class="form-control" id="anak" name="anak" value="0" min="0" required>
                         </div>
                         <div class="form-group">
                             <label for="harga">Harga Tiket</label>
@@ -217,7 +217,7 @@
                         <div class="form-group text-center">
                             <button type="button" class="btn btn-primary mr-2" onclick="hitungTotalBayar()">Hitung Total
                                 Bayar</button>
-                            <button type="submit" id="pesan-tiket-button" class="btn btn-success mr-2">Pesan Tiket</button>
+                            <button type="submit" disabled id="pesan-tiket-button" class="btn btn-success mr-2">Pesan Tiket</button>
                             <button type="reset" class="btn btn-danger">Cancel</button>
                         </div>
                     </form>
