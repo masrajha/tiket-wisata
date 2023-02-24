@@ -86,7 +86,7 @@
 
 <body>
     <!-- Tambahkan form HTML di sini -->
-    <form>
+    <form method="post" action="pesan-tiket.php">
         <label for="nama">Nama Lengkap:</label>
         <input type="text" id="nama" name="nama"><br><br>
 
@@ -149,7 +149,7 @@
         }
 
         // Mengubah nilai input harga tiket dengan harga yang sesuai
-        harga.value = "Rp. " + ticketPrice.toLocaleString();
+        harga.value = ticketPrice.toLocaleString();
     });
 
     // Mendapatkan elemen input untuk harga tiket, pengunjung dewasa, dan pengunjung anak-anak
@@ -176,7 +176,7 @@
         const total = ticketPrice * dewasaValue + 0.5 * ticketPrice * anakValue;
 
         // Mengubah nilai input total bayar dengan total yang sesuai
-        totalBayar.value = "Rp. " + total.toLocaleString();
+        totalBayar.value = total.toLocaleString();
     }
     const agreeCheckbox = document.getElementById("agree");
     const pesanTiketButton = document.getElementById("pesan-tiket-button");

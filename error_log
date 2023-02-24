@@ -1,0 +1,9 @@
+[24-Feb-2023 13:23:02 Asia/Jakarta] PHP Notice:  Undefined index: nama_lengkap in /home1/sipuwebi/ilkomapp.com/wisata/pesan-tiket.php on line 16
+[24-Feb-2023 13:23:02 Asia/Jakarta] PHP Notice:  Undefined index: nomor_identitas in /home1/sipuwebi/ilkomapp.com/wisata/pesan-tiket.php on line 17
+[24-Feb-2023 13:23:02 Asia/Jakarta] PHP Notice:  Undefined index: no_hp in /home1/sipuwebi/ilkomapp.com/wisata/pesan-tiket.php on line 18
+[24-Feb-2023 13:23:02 Asia/Jakarta] PHP Notice:  Undefined index: tempat_wisata in /home1/sipuwebi/ilkomapp.com/wisata/pesan-tiket.php on line 19
+[24-Feb-2023 13:23:02 Asia/Jakarta] PHP Notice:  Undefined index: tanggal_kunjungan in /home1/sipuwebi/ilkomapp.com/wisata/pesan-tiket.php on line 20
+[24-Feb-2023 13:23:02 Asia/Jakarta] PHP Notice:  Undefined index: pengunjung_dewasa in /home1/sipuwebi/ilkomapp.com/wisata/pesan-tiket.php on line 21
+[24-Feb-2023 13:23:02 Asia/Jakarta] PHP Notice:  Undefined index: pengunjung_anak in /home1/sipuwebi/ilkomapp.com/wisata/pesan-tiket.php on line 22
+[24-Feb-2023 13:23:02 Asia/Jakarta] PHP Notice:  Undefined index: harga_tiket in /home1/sipuwebi/ilkomapp.com/wisata/pesan-tiket.php on line 23
+[24-Feb-2023 13:23:02 Asia/Jakarta] PHP Notice:  Undefined index: total_bayar in /home1/sipuwebi/ilkomapp.com/wisata/pesan-tiket.php on line 24
