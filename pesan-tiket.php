@@ -46,7 +46,7 @@
 
     if (mysqli_query($conn, $sql)) {
         displayData();
-        echo "<b>Data berhasil disimpan ke dalam tabel pesan_tiket</b>";
+        echo "<b>Data berhasil disimpan ke dalam tabel <a href='data-pemesanan.php'> pesan_tiket</a></b>";
     } else {
         echo "Error: " . $sql . "<br>" . mysqli_error($conn);
     }
