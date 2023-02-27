@@ -26,7 +26,7 @@ wisata.addEventListener("change", function () {
 // Mendapatkan elemen input untuk harga tiket, pengunjung dewasa, dan pengunjung anak-anak
 const dewasa = document.getElementById("dewasa");
 const anak = document.getElementById("anak");
-const durasi = document.getElementById("durasi");
+
 
 // Mendapatkan elemen input untuk total bayar
 const totalBayar = document.getElementById("total-bayar");
@@ -39,7 +39,7 @@ anak.addEventListener("input", hitungTotalBayar);
 function hitungTotalBayar() {
     // Mendapatkan nilai input harga tiket
     const ticketPrice = parseInt(harga.value.replace(/\D/g, ""));
-
+    const durasi = document.getElementById("durasi");
     // Mendapatkan nilai input pengunjung dewasa dan anak-anak
     const dewasaValue = parseInt(dewasa.value);
     const anakValue = parseInt(anak.value);
