@@ -73,6 +73,7 @@ if (mysqli_num_rows($result) > 0) {
   echo '<th>No. HP</th>';
   echo '<th>Tempat Wisata</th>';
   echo '<th>Tanggal Kunjungan</th>';
+  echo '<th>Durasi</th>';
   echo '<th>Pengunjung Dewasa</th>';
   echo '<th>Pengunjung Anak-Anak</th>';
   echo '<th>Harga Tiket</th>';
@@ -89,6 +90,7 @@ if (mysqli_num_rows($result) > 0) {
     echo '<td>'.$row["no_hp"].'</td>';
     echo '<td>'.$row["tempat_wisata"].'</td>';
     echo '<td>'.$row["tanggal_kunjungan"].'</td>';
+    echo '<td>'.$row["durasi"].'</td>';
     echo '<td>'.$row["pengunjung_dewasa"].'</td>';
     echo '<td>'.$row["pengunjung_anak"].'</td>';
     echo '<td>'.$row["harga_tiket"].'</td>';

@@ -65,14 +65,15 @@
     $no_hp = $_POST["hp"];
     $tempat_wisata = $_POST["wisata"];
     $tanggal_kunjungan = $_POST["tanggal"];
+    $durasi = $_POST["durasi"];
     $pengunjung_dewasa = $_POST["dewasa"];
     $pengunjung_anak = $_POST["anak"];
     $harga_tiket = $_POST["harga"];
     $total_bayar = $_POST["total"];
 
     // Menyimpan data ke dalam tabel pesan_tiket
-    $sql = "INSERT INTO pesan_tiket (nama_lengkap, nomor_identitas, no_hp, tempat_wisata, tanggal_kunjungan, pengunjung_dewasa, pengunjung_anak, harga_tiket, total_bayar)
-        VALUES ('$nama_lengkap', '$nomor_identitas', '$no_hp', '$tempat_wisata', '$tanggal_kunjungan', '$pengunjung_dewasa', '$pengunjung_anak', '$harga_tiket', '$total_bayar')";
+    $sql = "INSERT INTO pesan_tiket (nama_lengkap, nomor_identitas, no_hp, tempat_wisata, tanggal_kunjungan, durasi, pengunjung_dewasa, pengunjung_anak, harga_tiket, total_bayar)
+        VALUES ('$nama_lengkap', '$nomor_identitas', '$no_hp', '$tempat_wisata', '$tanggal_kunjungan', '$durasi','$pengunjung_dewasa', '$pengunjung_anak', '$harga_tiket', '$total_bayar')";
 
     if (mysqli_query($conn, $sql)) {
         displayData();
@@ -88,6 +89,7 @@
         echo "<tr><th>No hp</th><td>" . $_POST["hp"] . "</td></tr>";
         echo "<tr><th>Tempat wisata</th><td>" . $_POST["wisata"] . "</td></tr>";
         echo "<tr><th>Tanggal kunjungan</th><td>" . $_POST["tanggal"] . "</td></tr>";
+        echo "<tr><th>Durasi</th><td>" . $_POST["durasi"] . "</td></tr>";
         echo "<tr><th>Pengunjung dewasa</th><td>" . $_POST["dewasa"] . "</td></tr>";
         echo "<tr><th>Pengunjung anak-anak</th><td>" . $_POST["anak"] . "</td></tr>";
         echo "<tr><th>Harga tiket</th><td>" . $_POST["harga"] . "</td></tr>";
